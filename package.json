@@ -16,13 +16,11 @@
   "bugs": {
     "url": "https://github.com/AVmyasoedov88/frontend-project-lvl1/issues"
   },
-  
   "homepage": "https://github.com/AVmyasoedov88/frontend-project-lvl1#readme",
   "dependencies": {
     "lodash": "^4.17.21",
     "readline-sync": "^1.4.10"
   },
-  
   "bin": {
     "brain-games": "bin/brain-games.js"
   }
