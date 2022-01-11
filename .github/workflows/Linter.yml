@@ -1,0 +1,17 @@
+name: linter
+
+on:
+  - push
+  - pull_request
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: npm install
+        run: make install
+        env:
+          CI: true
+      - name: Run linter
+        run: make lint
