@@ -5,6 +5,9 @@
 
 [![linter](https://github.com/AVmyasoedov88/frontend-project-lvl1/actions/workflows/linter-check.yml/badge.svg)](https://github.com/AVmyasoedov88/frontend-project-lvl1/actions/workflows/linter-check.yml)
 
+
+Brain-game
+Brain-event
 [![asciicast](https://asciinema.org/a/m2Oca58DP3cJc9L8pG3quktxP.svg)](https://asciinema.org/a/m2Oca58DP3cJc9L8pG3quktxP)
 
 
