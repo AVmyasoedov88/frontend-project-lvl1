@@ -7,8 +7,8 @@ function isNumberEven() {
   console.log(`Hello, ${userName}!`);
   console.log('Answer "yes" if the number is even, otherwise answer "no".');
   const getRandomNumber = () => Math.floor(Math.random() * 100);
-  const round = 3;
-  for (let i = 1; i <= round; i += 1) {
+  const round = 2;
+  for (let i = 0; i <= round; i += 1) {
     const number = getRandomNumber();
     console.log(`Question: ${number}`);
     const playerAnswer = readlineSync.question('You answer: ');
