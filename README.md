@@ -17,3 +17,5 @@ brain-calc
 brain-gsd
 [![asciicast](https://asciinema.org/a/aLyoqyjUkpyfUTaup8aFMZtaR.svg)](https://asciinema.org/a/aLyoqyjUkpyfUTaup8aFMZtaR)
 
+brain-progression
+[![asciicast](https://asciinema.org/a/GNPzxvg3LCWXZ31mkoIP33EPk.svg)](https://asciinema.org/a/GNPzxvg3LCWXZ31mkoIP33EPk)
