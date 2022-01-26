@@ -1,13 +1,10 @@
 import readlineSync from 'readline-sync';
+import { userName, getRandomNumber, round } from '../index.js';
 
 // eslint-disable-next-line consistent-return
 function isNumberEven() {
-  console.log('Welcome to the Brain Games!');
-  const userName = readlineSync.question('May I have your name? ');
-  console.log(`Hello, ${userName}!`);
   console.log('Answer "yes" if the number is even, otherwise answer "no".');
-  const getRandomNumber = () => Math.floor(Math.random() * 100);
-  const round = 2;
+
   for (let i = 0; i <= round; i += 1) {
     const number = getRandomNumber();
     console.log(`Question: ${number}`);

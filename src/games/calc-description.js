@@ -1,7 +1,5 @@
 import readlineSync from 'readline-sync';
-import { userName, getRandomNumber } from '../index.js';
-
-const round = 2;
+import { userName, getRandomNumber, round } from '../index.js';
 
 const isSumCorrect = () => {
   const simbol = ['+', '-', '*'];

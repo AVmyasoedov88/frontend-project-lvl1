@@ -1,5 +1,5 @@
 import readlineSync from 'readline-sync';
-import { userName, getRandomNumberProgression } from '../index.js';
+import { userName, getRandomNumberProgression, round } from '../index.js';
 
 const arithmeticProgression = (start, difference, lengthProgression) => {
   const arr = [];
@@ -13,10 +13,8 @@ const arithmeticProgression = (start, difference, lengthProgression) => {
   return arr;
 };
 
-const round = 2;
-console.log('What number is missing in the progression?');
-
 const progressionQuestion = () => {
+  console.log('What number is missing in the progression?');
   for (let i = 0; i <= round; i += 1) {
     const start = getRandomNumberProgression(1, 100);
     const difference = getRandomNumberProgression(2, 10);
