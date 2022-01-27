@@ -5,6 +5,8 @@
 
 [![linter](https://github.com/AVmyasoedov88/frontend-project-lvl1/actions/workflows/linter-check.yml/badge.svg)](https://github.com/AVmyasoedov88/frontend-project-lvl1/actions/workflows/linter-check.yml)
 
+install Brain games:
+$ git clone https://github.com/AVmyasoedov88/frontend-project-lvl1
 
 Brain-game
 
