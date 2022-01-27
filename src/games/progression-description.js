@@ -1,5 +1,7 @@
 import readlineSync from 'readline-sync';
-import { userName, getRandomNumberProgression, round } from '../index.js';
+import {
+  userName, getRandomNumberProgression, round,
+} from '../index.js';
 
 const arithmeticProgression = (start, difference, lengthProgression) => {
   const arr = [];
