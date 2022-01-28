@@ -25,7 +25,8 @@ const isSumCorrect = () => {
     if (correctAnswer === playerAnswerNum) {
       console.log('Correct!');
     } else {
-      console.log(`${playerAnswerNum} is wrong answer ;(. Correct answer was ${correctAnswer}. Let's try again, ${userName}`);
+      console.log(`${playerAnswer} is wrong answer ;(. Correct answer was ${correctAnswer}.`);
+      console.log(`Let's try again, ${userName}!`);
       return;
     }
   }

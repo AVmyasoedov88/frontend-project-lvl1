@@ -39,7 +39,8 @@ const commonGsD = () => {
     if (playerAnswerNum === result[0]) {
       console.log('Correct!');
     } else {
-      console.log(`${playerAnswerNum} is wrong answer ;(. Correct answer was ${result[0]}. Let's try again, ${userName}!`);
+      console.log(`${playerAnswerNum} is wrong answer ;(. Correct answer was ${result[0]}.`);
+      console.log(`Let's try again, ${userName}!`);
       return;
     }
   }
