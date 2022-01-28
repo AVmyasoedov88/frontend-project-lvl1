@@ -29,7 +29,7 @@ const progressionQuestion = () => {
     progression[hiddenSimbol] = '..';
 
     const question = progression.join(' ');
-    console.log(question);
+    console.log(`Question: ${question}`);
     const playerAnswer = readlineSync.question('You answer: ');
 
     if (playerAnswer === correctAnswer) {
