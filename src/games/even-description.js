@@ -23,7 +23,8 @@ function isNumberEven() {
     if (correctAnswer === playerAnswer) {
       console.log('Correct!');
     } else {
-      console.log(`${playerAnswer} is wrong answer ;(. Correct answer was ${correctAnswer}. Let's try again, ${userName}`);
+      console.log(`${playerAnswer} is wrong answer ;(. Correct answer was ${correctAnswer}.`);
+      console.log(`Let's try again, ${userName}!`);
       return;
     }
   }
