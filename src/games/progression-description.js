@@ -20,7 +20,7 @@ const progressionQuestion = () => {
   for (let i = 0; i <= round; i += 1) {
     const start = getRandomNumberProgression(1, 100);
     const difference = getRandomNumberProgression(2, 10);
-    const lengthProgression = getRandomNumberProgression(6, 11);
+    const lengthProgression = getRandomNumberProgression(6, 20);
 
     const progression = arithmeticProgression(start, difference, lengthProgression);
     const hiddenSimbol = getRandomNumberProgression(0, progression.length - 1);
