@@ -1,7 +1,16 @@
 import readlineSync from 'readline-sync';
 import { userName, getRandomNumber, round } from '../index.js';
 
-// eslint-disable-next-line consistent-return
+const checkEven = (num) => {
+  let result = '';
+  if (num % 2 === 0) {
+    result = 'yes';
+  } else {
+    result = 'no';
+  }
+  return result;
+};
+
 function isNumberEven() {
   console.log('Answer "yes" if the number is even, otherwise answer "no".');
 
@@ -9,24 +18,18 @@ function isNumberEven() {
     const number = getRandomNumber();
     console.log(`Question: ${number}`);
     const playerAnswer = readlineSync.question('You answer: ');
-    if (number % 2 === 0) {
-      if (playerAnswer === 'yes') {
-        console.log('Correct!');
-      } else {
-        console.log(`'${playerAnswer}' is wrong answer ;(. Correct answer was 'yes'.`);
-        return `Let's try again, ${userName}!`;
-      }
-    }
-    if (number % 2 !== 0) {
-      if (playerAnswer === 'no') {
-        console.log('Correct!');
-      } else {
-        console.log(`'${playerAnswer}' is wrong answer ;(. Correct answer was 'no'.`);
-        return `Let's try again, ${userName}!`;
-      }
+    const correctAnswer = checkEven(number);
+
+    if (correctAnswer === playerAnswer) {
+      console.log('Correct!');
+    } else {
+      console.log(`${playerAnswer} is wrong answer ;(. Correct answer was ${correctAnswer}. Let's try again, ${userName}`);
+      return;
     }
   }
+
   console.log(`Congratulations, ${userName}!`);
 }
 
 export default isNumberEven;
+// переписать

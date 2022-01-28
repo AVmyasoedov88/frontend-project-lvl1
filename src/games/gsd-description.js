@@ -25,17 +25,12 @@ const commonGsD = () => {
           arrDividerNum1.push(a - i);
         }
       }
-      // console.log(arrDividerNum1);
 
       for (let j = 0; j <= b; j += 1) {
         if (b % (b - j) === 0) {
           arrDividerNum2.push(b - j);
         }
       }
-      // console.log(arrDividerNum2);
-
-      // eslint-disable-next-line no-restricted-syntax
-
       return (_.intersection(arrDividerNum1, arrDividerNum2));
     };
 

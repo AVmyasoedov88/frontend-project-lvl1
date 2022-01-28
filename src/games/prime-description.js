@@ -13,10 +13,8 @@ const simpleNumber = (num) => {
   }
 
   if (arr.length === 2) {
-    // console.log('Простое число');
     result = 'yes';
   } else {
-    // console.log('не простое число');
     result = 'no';
   }
   return result;
