@@ -1,7 +1,8 @@
-import readlineSync from 'readline-sync';
-import { userName, getRandomNumber, round } from '../index.js';
+import { getRandomNumber, commonBrainRules } from '../index.js';
 
-const checkEven = (num) => {
+const gameRules = 'Answer "yes" if the number is even, otherwise answer "no".';
+
+const isEvenLogics = (num) => {
   let result = '';
   if (num % 2 === 0) {
     result = 'yes';
@@ -11,26 +12,13 @@ const checkEven = (num) => {
   return result;
 };
 
-function isNumberEven() {
-  console.log('Answer "yes" if the number is even, otherwise answer "no".');
+const infoForGame = () => {
+  const number = getRandomNumber(1, 100);
+  const question = number;
+  const correctAnswer = isEvenLogics(number);
+  return [question, correctAnswer];
+};
 
-  for (let i = 0; i <= round; i += 1) {
-    const number = getRandomNumber();
-    console.log(`Question: ${number}`);
-    const playerAnswer = readlineSync.question('You answer: ');
-    const correctAnswer = checkEven(number);
+const evenDecription = () => commonBrainRules(gameRules, infoForGame);
 
-    if (correctAnswer === playerAnswer) {
-      console.log('Correct!');
-    } else {
-      console.log(`${playerAnswer} is wrong answer ;(. Correct answer was ${correctAnswer}.`);
-      console.log(`Let's try again, ${userName}!`);
-      return;
-    }
-  }
-
-  console.log(`Congratulations, ${userName}!`);
-}
-
-export default isNumberEven;
-// переписать
+export default evenDecription;

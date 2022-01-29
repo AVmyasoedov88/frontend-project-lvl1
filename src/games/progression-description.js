@@ -1,7 +1,6 @@
-import readlineSync from 'readline-sync';
-import {
-  userName, getRandomNumberProgression, round,
-} from '../index.js';
+import { getRandomNumber, commonBrainRules } from '../index.js';
+
+const gameRules = 'What number is missing in the progression?';
 
 const arithmeticProgression = (start, difference, lengthProgression) => {
   const arr = [];
@@ -15,33 +14,18 @@ const arithmeticProgression = (start, difference, lengthProgression) => {
   return arr;
 };
 
-const progressionQuestion = () => {
-  console.log('What number is missing in the progression?');
-  for (let i = 0; i <= round; i += 1) {
-    const start = getRandomNumberProgression(1, 100);
-    const difference = getRandomNumberProgression(1, 10);
-    const lengthProgression = getRandomNumberProgression(5, 20);
-
-    const progression = arithmeticProgression(start, difference, lengthProgression);
-    const hiddenSimbol = getRandomNumberProgression(0, progression.length - 1);
-
-    const correctAnswer = `${progression[hiddenSimbol]}`;
-    progression[hiddenSimbol] = '..';
-
-    const question = progression.join(' ');
-    console.log(`Question: ${question}`);
-    const playerAnswer = readlineSync.question('You answer: ');
-
-    if (playerAnswer === correctAnswer) {
-      console.log('Correct!');
-    } else {
-      console.log(`${playerAnswer} is wrong answer ;(. Correct answer was ${correctAnswer}.`);
-      console.log(`Let's try again, ${userName}!`);
-      return;
-    }
-  }
-
-  console.log(`Congratulations, ${userName}!`);
+const infoForGame = () => {
+  const start = getRandomNumber(1, 100);
+  const difference = getRandomNumber(1, 10);
+  const lengthProgression = getRandomNumber(5, 20);
+  const progression = arithmeticProgression(start, difference, lengthProgression);
+  const hiddenSimbol = getRandomNumber(0, progression.length - 1);
+  const correctAnswer = `${progression[hiddenSimbol]}`;
+  progression[hiddenSimbol] = '..';
+  const question = progression.join(' ');
+  return [question, correctAnswer];
 };
 
-export default progressionQuestion;
+const progressionDecription = () => commonBrainRules(gameRules, infoForGame);
+
+export default progressionDecription;

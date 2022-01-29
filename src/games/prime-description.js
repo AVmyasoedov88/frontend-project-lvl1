@@ -1,7 +1,6 @@
-import readlineSync from 'readline-sync';
-import {
-  userName, getRandomNumber, round,
-} from '../index.js';
+import { getRandomNumber, commonBrainRules } from '../index.js';
+
+const gameRules = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
 const simpleNumber = (num) => {
   const arr = [];
@@ -20,25 +19,13 @@ const simpleNumber = (num) => {
   return result;
 };
 
-const isPrime = () => {
-  console.log('Answer "yes" if given number is prime. Otherwise answer "no".');
-
-  for (let i = 0; i <= round; i += 1) {
-    const number = getRandomNumber();
-    console.log(`Question: ${number}`);
-    const playerAnswer = readlineSync.question('You answer: ');
-    const correctAnswer = simpleNumber(number);
-
-    if (correctAnswer === playerAnswer) {
-      console.log('Correct!');
-    } else {
-      console.log(`${playerAnswer} is wrong answer ;(. Correct answer was ${correctAnswer}.`);
-      console.log(`Let's try again, ${userName}!`);
-      return;
-    }
-  }
-
-  console.log(`Congratulations, ${userName}!`);
+const infoForGame = () => {
+  const number = getRandomNumber(2, 100);
+  const question = number;
+  const correctAnswer = simpleNumber(number);
+  return [question, correctAnswer];
 };
 
-export default isPrime;
+const primeDecription = () => commonBrainRules(gameRules, infoForGame);
+
+export default primeDecription;

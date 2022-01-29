@@ -1,36 +1,29 @@
-import readlineSync from 'readline-sync';
-import { userName, getRandomNumber, round } from '../index.js';
+import { getRandomNumber, commonBrainRules } from '../index.js';
 
-const isSumCorrect = () => {
-  const simbol = ['+', '-', '*'];
+const gameRules = 'What is the result of the expression?';
 
-  console.log('What is the result of the expression?');
-  for (let i = 0; i <= round; i += 1) {
-    const number1 = getRandomNumber();
-    const number2 = getRandomNumber();
-    const randomSimbols = simbol[Math.floor(Math.random() * simbol.length)];
-    const question = (`${number1} ${randomSimbols} ${number2}`);
-    console.log(`Question: ${question}`);
-    const playerAnswer = readlineSync.question('You answer: ');
-    const playerAnswerNum = Number(playerAnswer);
-    let correctAnswer;
-    if (randomSimbols === '+') {
-      correctAnswer = number1 + number2;
-    } else if (randomSimbols === '-') {
-      correctAnswer = number1 - number2;
-    } else if (randomSimbols === '*') {
-      correctAnswer = number1 * number2;
-    }
-
-    if (correctAnswer === playerAnswerNum) {
-      console.log('Correct!');
-    } else {
-      console.log(`${playerAnswer} is wrong answer ;(. Correct answer was ${correctAnswer}.`);
-      console.log(`Let's try again, ${userName}!`);
-      return;
-    }
+const isGsdLogics = (num1, num2, simbols) => {
+  let result = '';
+  if (simbols === '+') {
+    result = num1 + num2;
+  } else if (simbols === '-') {
+    result = num1 - num2;
+  } else if (simbols === '*') {
+    result = num1 * num2;
   }
-  console.log(`Congratulations, ${userName}!`);
+  return result;
 };
 
-export default isSumCorrect;
+const infoForGame = () => {
+  const number1 = getRandomNumber();
+  const number2 = getRandomNumber();
+  const simbol = ['+', '-', '*'];
+  const randomSimbols = simbol[Math.floor(Math.random() * simbol.length)];
+  const question = (`${number1} ${randomSimbols} ${number2}`);
+  const correctAnswer = String(isGsdLogics(number1, number2, randomSimbols));
+  return [question, correctAnswer];
+};
+
+const calcDecription = () => commonBrainRules(gameRules, infoForGame);
+
+export default calcDecription;
