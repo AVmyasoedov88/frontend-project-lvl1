@@ -15,8 +15,8 @@ const isGsdLogics = (num1, num2, simbols) => {
 };
 
 const infoForGame = () => {
-  const number1 = getRandomNumber();
-  const number2 = getRandomNumber();
+  const number1 = getRandomNumber(1, 100);
+  const number2 = getRandomNumber(1, 100);
   const simbol = ['+', '-', '*'];
   const randomSimbols = simbol[Math.floor(Math.random() * simbol.length)];
   const question = (`${number1} ${randomSimbols} ${number2}`);
