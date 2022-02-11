@@ -5,9 +5,7 @@ const gameRules = 'What number is missing in the progression?';
 const arithmeticProgression = (start, difference, lengthProgression) => {
   const arr = [];
   for (let i = 0; i <= lengthProgression; i += 1) {
-    const newNum = start + difference;
-    // eslint-disable-next-line no-param-reassign
-    start = newNum;
+    const newNum = start + i * difference;
     arr.push(newNum);
   }
 

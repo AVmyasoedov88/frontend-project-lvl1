@@ -2,13 +2,13 @@ import { getRandomNumber, commonBrainRules } from '../index.js';
 
 const gameRules = 'What is the result of the expression?';
 
-const isGsdLogics = (num1, num2, simbols) => {
+const calculation = (num1, num2, sign) => {
   let result = '';
-  if (simbols === '+') {
+  if (sign === '+') {
     result = num1 + num2;
-  } else if (simbols === '-') {
+  } else if (sign === '-') {
     result = num1 - num2;
-  } else if (simbols === '*') {
+  } else if (sign === '*') {
     result = num1 * num2;
   }
   return result;
@@ -20,7 +20,7 @@ const infoForGame = () => {
   const simbol = ['+', '-', '*'];
   const randomSimbols = simbol[getRandomNumber(0, 2)];
   const question = (`${number1} ${randomSimbols} ${number2}`);
-  const correctAnswer = String(isGsdLogics(number1, number2, randomSimbols));
+  const correctAnswer = String(calculation(number1, number2, randomSimbols));
   return [question, correctAnswer];
 };
 
