@@ -1,4 +1,4 @@
-import { getRandomNumber, commonBrainRules } from '../index.js';
+import { getRandomNumber, engineGames } from '../index.js';
 
 const gameRules = 'What number is missing in the progression?';
 
@@ -12,7 +12,7 @@ const arithmeticProgression = (start, difference, lengthProgression) => {
   return arr;
 };
 
-const infoForGame = () => {
+const getGameData = () => {
   const start = getRandomNumber(1, 100);
   const difference = getRandomNumber(1, 10);
   const lengthProgression = getRandomNumber(5, 20);
@@ -24,6 +24,6 @@ const infoForGame = () => {
   return [question, correctAnswer];
 };
 
-const progressionDecription = () => commonBrainRules(gameRules, infoForGame);
+const progressionGame = () => engineGames(gameRules, getGameData);
 
-export default progressionDecription;
+export default progressionGame;
